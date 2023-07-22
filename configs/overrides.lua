@@ -38,6 +38,7 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "node-debug2-adapter",
   },
 }
 
