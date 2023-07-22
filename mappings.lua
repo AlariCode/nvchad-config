@@ -33,7 +33,31 @@ M.general = {
     },
     ["<leader>ts"] = {
       ":Neotest summary<CR>",
-      "Test output",
+      "Test summary",
+    },
+    ["<leader>du"] = {
+      function()
+        require("dapui").toggle()
+      end,
+      "Dedug UI",
+    },
+    ["<leader>db"] = {
+      function()
+        require("dap").toggle_breakpoint()
+      end,
+      "Breakpoint",
+    },
+    ["<leader>ds"] = {
+      function()
+        require("dap").continue()
+      end,
+      "Start",
+    },
+    ["<leader>dn"] = {
+      function()
+        require("dap").step_over()
+      end,
+      "Step over",
     },
   },
   t = {
