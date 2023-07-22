@@ -58,6 +58,70 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
     },
   },
+  {
+    "nvim-neotest/neotest",
+    event = "VeryLazy",
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-jest" {
+            jestCommand = "npm test --",
+            jestConfigFile = "custom.jest.config.ts",
+            env = { CI = true },
+            cwd = function(path)
+              return vim.fn.getcwd()
+            end,
+          },
+        },
+      }
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+      "haydenmeade/neotest-jest",
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require "dap"
+    end,
+    dependencies = {
+      "mxsdev/nvim-dap-vscode-js",
+    },
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    config = function()
+      require("dapui").setup()
+
+      local dap, dapui = require "dap", require "dapui"
+
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open {}
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close {}
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close {}
+      end
+
+      vim.keymap.set("n", "<leader>ui", require("dapui").toggle)
+    end,
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+  },
+  {
+    "folke/neodev.nvim",
+    config = function()
+      require("neodev").setup {
+        library = { plugins = { "nvim-dap-ui" }, types = true },
+      }
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

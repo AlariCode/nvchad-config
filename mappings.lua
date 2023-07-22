@@ -3,10 +3,9 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>w"] = { "<cmd>w <CR>" },
-    ["\\"] = { "<cmd>:vsplit <CR>" },
-    ["<C-v>"] = {
+    ["\\"] = { "<cmd>:vsplit <CR>", "Vertical split" },
+    ["<C-t>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
@@ -16,9 +15,29 @@ M.general = {
         require("nvterm.terminal").toggle "horizontal"
       end,
     },
+    ["<leader>tt"] = {
+      function()
+        require("neotest").run.run()
+      end,
+      "Run nearest test",
+    },
+    ["<leader>tf"] = {
+      function()
+        require("neotest").run.run(vim.fn.expand "%")
+      end,
+      "Run file test",
+    },
+    ["<leader>to"] = {
+      ":Neotest output<CR>",
+      "Test output",
+    },
+    ["<leader>ts"] = {
+      ":Neotest summary<CR>",
+      "Test output",
+    },
   },
   t = {
-    ["<C-v>"] = {
+    ["<C-t>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
