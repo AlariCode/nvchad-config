@@ -1,10 +1,6 @@
 local overrides = require "custom.configs.overrides"
 
----@type NvPluginSpec[]
 local plugins = {
-
-  -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -19,7 +15,7 @@ local plugins = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
+    end,
   },
 
   -- override plugin configs
@@ -139,6 +135,10 @@ local plugins = {
       }
     end,
   },
+  { "tpope/vim-fugitive" },
+  { "rbong/vim-flog", dependencies = {
+    "tpope/vim-fugitive",
+  }, lazy = false },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
