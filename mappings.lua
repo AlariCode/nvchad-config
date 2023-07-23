@@ -63,6 +63,22 @@ M.general = {
       ":ChatGPTCompleteCode<CR>",
       "Step over",
     },
+    ["<leader>gl"] = {
+      ":Flog<CR>",
+      "Git Log",
+    },
+    ["<leader>gf"] = {
+      ":DiffviewFileHistory<CR>",
+      "Git File History",
+    },
+    ["<leader>gc"] = {
+      ":DiffviewOpen HEAD~2<CR>",
+      "Git Last Commit",
+    },
+    ["<leader>gt"] = {
+      ":DiffviewToggleFile<CR>",
+      "Git Last Commit",
+    },
   },
   t = {
     ["<C-t>"] = {

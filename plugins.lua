@@ -139,6 +139,7 @@ local plugins = {
   { "rbong/vim-flog", dependencies = {
     "tpope/vim-fugitive",
   }, lazy = false },
+  { "sindrets/diffview.nvim", lazy = false },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
