@@ -59,6 +59,10 @@ M.general = {
       end,
       "Step over",
     },
+    ["<leader>cg"] = {
+      ":ChatGPTCompleteCode<CR>",
+      "Step over",
+    },
   },
   t = {
     ["<C-t>"] = {
