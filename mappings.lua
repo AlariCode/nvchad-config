@@ -5,7 +5,7 @@ M.general = {
   n = {
     ["<leader>w"] = { "<cmd>w <CR>" },
     ["\\"] = { "<cmd>:vsplit <CR>", "Vertical split" },
-    ["<C-t>"] = {
+    ["<C-]>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
@@ -81,7 +81,7 @@ M.general = {
     },
   },
   t = {
-    ["<C-t>"] = {
+    ["<C-]>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
