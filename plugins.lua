@@ -140,6 +140,13 @@ local plugins = {
     "tpope/vim-fugitive",
   }, lazy = false },
   { "sindrets/diffview.nvim", lazy = false },
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+    config = function()
+      require("leap").add_default_mappings(true)
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
