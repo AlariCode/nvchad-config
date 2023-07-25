@@ -147,7 +147,22 @@ local plugins = {
       require("leap").add_default_mappings(true)
     end,
   },
-  -- To make a plugin not be loaded
+  {
+    "kevinhwang91/nvim-bqf",
+    lazy = false,
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = false,
+    config = function()
+      require("todo-comments").setup()
+    end,
+  }, -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
   --   enabled = false

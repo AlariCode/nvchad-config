@@ -3,7 +3,9 @@ local M = {}
 
 M.general = {
   n = {
-    ["<leader>w"] = { "<cmd>w <CR>" },
+    ["<leader>w"] = { "<cmd>w<CR>", "Save" },
+    ["<leader>ll"] = { "<cmd>TroubleToggle<CR>", "Open Trouble" },
+    ["<leader>ft"] = { "<cmd>TodoTelescope<CR>", "Find Todo" },
     ["\\"] = { "<cmd>:vsplit <CR>", "Vertical split" },
     ["<C-]>"] = {
       function()
