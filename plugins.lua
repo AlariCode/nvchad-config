@@ -176,7 +176,12 @@ local plugins = {
     config = function(_, opts)
       require("gh-actions").setup(opts)
     end,
-  }, -- {
+  },
+  {
+    "Exafunction/codeium.vim",
+    lazy = false,
+  },
+  -- {
   --   "NvChad/nvim-colorizer.lua",
   --   enabled = false
   -- },
