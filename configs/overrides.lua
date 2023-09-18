@@ -13,6 +13,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "prisma",
+    "go",
   },
   indent = {
     enable = true,
@@ -39,6 +40,8 @@ M.mason = {
     "clangd",
     "clang-format",
     "node-debug2-adapter",
+    "gopls",
+    "gradle_ls",
   },
 }
 

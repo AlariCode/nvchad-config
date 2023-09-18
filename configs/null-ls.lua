@@ -10,6 +10,7 @@ local sources = {
   -- webdev stuff
   formatting.prettier, -- so prettier works only on these filetypes
   lint.eslint_d,
+  lint.golangci_lint,
   -- Lua
   formatting.stylua,
 }
