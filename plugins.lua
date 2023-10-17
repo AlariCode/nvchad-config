@@ -2,26 +2,37 @@ local overrides = require "custom.configs.overrides"
 
 local plugins = {
   {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.lint"
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
-
+  {
+    "mhartington/formatter.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.formatter"
+    end,
+  },
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason,
+    opts = {
+      ensure_installed = {
+        "eslint-lsp",
+        "js-debug-adapter",
+        "prettier",
+        "typescript-language-server",
+      },
+    },
   },
 
   {
