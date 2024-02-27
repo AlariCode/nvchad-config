@@ -24,6 +24,15 @@ for _, lsp in ipairs(servers) do
         description = "Organize Imports",
       },
     },
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        }
+      }
+    }
   }
   lspconfig.prismals.setup {}
 end

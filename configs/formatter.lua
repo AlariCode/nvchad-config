@@ -12,6 +12,9 @@ local M = {
     typescript = {
       require("formatter.filetypes.typescript").prettier,
     },
+    go = {
+      require("formatter.filetypes.go").gofmt,
+    },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,
     },
